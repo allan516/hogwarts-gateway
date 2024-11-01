@@ -3,3 +3,26 @@
   padding: 0px;
   margin: 0px;
 }
+
+@font-face {
+  font-family: harry;
+  src: url('../font/HARRYP__.TTF');
+}
+
+.img-header {
+  width: 100%;
+  margin-bottom: -4px;
+}
+
+nav {
+  background-color: #090a09f5;
+  margin-bottom: 5px;
+}
+
+nav p {
+  text-align: left;
+  padding: 10px;
+  font-family: harry;
+  font-size: 4vh;
+  color: white;
+}
