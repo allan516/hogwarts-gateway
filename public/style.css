@@ -15,7 +15,7 @@
 }
 
 nav {
-  background-color: #090a09f5;
+  background-color: #070508;
   margin-bottom: 5px;
 }
 
@@ -25,4 +25,32 @@ nav p {
   font-family: harry;
   font-size: 4vh;
   color: white;
+}
+
+/* conteúdo principal */
+
+span {
+  display: block;
+  margin: 10px 0;
+  background-color: #070508;
+  min-width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* footer */
+
+footer {
+  background-color: #070508;
+  margin-bottom: -3px;
+}
+
+footer p {
+  font-family: harry;
+  color: white;
+  font-size: 3vh;
+  text-align: center;
+  padding: 5px 0;
 }
