@@ -15,8 +15,8 @@ async function getCharactersApi() {
           name.innerHTML = element.fullName;
           img.src = element.image;
           img.style.clipPath = 'circle()';
-          img.style.paddingTop = '60px';
-          img.style.width = '150px';
+          img.style.paddingTop = '40px';
+          img.style.width = '100px';
           span.classList.add('.spanShowlist');
           span.appendChild(img);
           span.appendChild(name);

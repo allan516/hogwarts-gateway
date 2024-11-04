@@ -44,7 +44,7 @@ nav p {
   flex-direction: column;
   justify-content: space-around;
   max-width: 1000px;
-  height: 1500px;
+  height: 1300px;
   padding: 10px;
   margin: auto;
 }
@@ -66,7 +66,7 @@ nav p {
 .characters {
   margin: auto;
   background-color: black;
-  border-radius: 0 20px 0 20px;
+  border-radius: 0 200px 200px 0;
   padding: 50px 0;
 }
 
@@ -80,9 +80,10 @@ nav p {
 
 span {
   display: block;
-  margin: 10px 0;
+  height: 270px;
   color: white;
-  background-color: #19191b;
+  background-color: #3a4a77;
+  border: 1px solid #daa520;
   text-align: center;
   border-radius: 10px;
   margin: 10px;
@@ -90,8 +91,7 @@ span {
 }
 
 span:hover {
-  background-color: #ececec;
-  color: black;
+  background-color: #5f72a8;
   transform: translate(-5px, -5px);
   box-shadow: 1px 1px 5px #616161;
 }
@@ -134,7 +134,7 @@ footer {
 footer p {
   font-family: harry;
   color: white;
-  font-size: 3vh;
+  font-size: 2rem;
   text-align: center;
-  padding: 5px 0;
+  padding: 20px 0;
 }
