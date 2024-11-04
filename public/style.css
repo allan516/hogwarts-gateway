@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 /* Reset css */
 * {
   padding: 0px;
@@ -15,7 +17,7 @@
 }
 
 nav {
-  background-color: #070508;
+  background-color: #19191b;
   margin-bottom: 5px;
 }
 
@@ -29,21 +31,39 @@ nav p {
 
 /* conteúdo principal */
 
+.show-items {
+  display: grid;
+  max-width: 900px;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+}
+
 span {
   display: block;
   margin: 10px 0;
-  background-color: #070508;
-  min-width: 500px;
-  height: 300px;
+  color: white;
+  background-color: #19191b;
+  text-align: center;
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
 }
 
+span:hover {
+  background-color: rgb(236, 236, 236);
+  color: black;
+}
+
+span p {
+  font-size: 2vh;
+  font-family: 'Poppins', sans-serif;
+}
+
 /* footer */
 
 footer {
-  background-color: #070508;
+  background-color: #19191b;
   margin-bottom: -3px;
 }
 
