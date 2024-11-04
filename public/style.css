@@ -4,6 +4,7 @@
 * {
   padding: 0px;
   margin: 0px;
+  font-family: 'Poppins', sans-serif;
 }
 
 @font-face {
@@ -11,14 +12,21 @@
   src: url('../font/HARRYP__.TTF');
 }
 
-.img-header {
-  width: 100%;
+header {
   margin-bottom: -4px;
+  background-color: #151b24;
+}
+
+.img-header {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  margin: auto;
+  align-items: center;
 }
 
 nav {
   background-color: #19191b;
-  margin-bottom: 5px;
 }
 
 nav p {
@@ -31,9 +39,40 @@ nav p {
 
 /* conteúdo principal */
 
+.introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 1000px;
+  height: 1500px;
+  padding: 10px;
+  margin: auto;
+}
+
+.introduction p {
+  line-height: 2;
+  padding: 10px;
+  text-align: justify;
+}
+
+.introduction h1 {
+  font-size: 4rem;
+}
+
+.introduction h2 {
+  font-size: 2rem;
+}
+
+.characters {
+  margin: auto;
+  background-color: black;
+  border-radius: 0 20px 0 20px;
+  padding: 50px 0;
+}
+
 .show-items {
   display: grid;
-  max-width: 900px;
+  max-width: 700px;
   margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: center;
@@ -51,8 +90,10 @@ span {
 }
 
 span:hover {
-  background-color: rgb(236, 236, 236);
+  background-color: #ececec;
   color: black;
+  transform: translate(-5px, -5px);
+  box-shadow: 1px 1px 5px #616161;
 }
 
 span p {
@@ -60,6 +101,29 @@ span p {
   font-family: 'Poppins', sans-serif;
 }
 
+/* section books */
+
+.books {
+  max-width: 900px;
+  padding: 10px;
+  margin: auto;
+}
+
+.books p {
+  line-height: 2;
+  padding: 10px;
+  text-align: justify;
+}
+
+.books > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.books div {
+  padding: 10px;
+}
 /* footer */
 
 footer {

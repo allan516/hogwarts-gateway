@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const showItems = document.querySelector('.show-items');
+const getBook = document.querySelector('.books');
 function getCharactersApi() {
     return __awaiter(this, void 0, void 0, function* () {
         const url = 'https://potterapi-fedeperin.vercel.app/pt/characters';
@@ -40,4 +41,44 @@ function getCharactersApi() {
         }
     });
 }
+function getBooksApi() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const url = 'https://potterapi-fedeperin.vercel.app/pt/books';
+        const response = yield fetch(url);
+        try {
+            if (response.ok) {
+                const books = yield response.json();
+                books.forEach((element) => {
+                    console.log(element);
+                    const name = document.createElement('p');
+                    const img = document.createElement('img');
+                    const description = document.createElement('p');
+                    const divDescription = document.createElement('div');
+                    const divImg = document.createElement('div');
+                    const div = document.createElement('div');
+                    if (element.title !== null &&
+                        element.cover !== null &&
+                        element.description !== null) {
+                        name.innerHTML = element.title;
+                        description.innerHTML = element.description;
+                        img.src = element.cover;
+                        img.style.height = '250px';
+                        img.style.paddingTop = '60px';
+                        divImg.appendChild(img);
+                        divDescription.appendChild(name);
+                        divDescription.appendChild(description);
+                        div.appendChild(divImg);
+                        div.appendChild(divDescription);
+                        getBook.appendChild(div);
+                    }
+                });
+            }
+        }
+        catch (error) {
+            console.error(error);
+            throw new Error(`Response status: ${response.status}`);
+        }
+    });
+}
 getCharactersApi();
+getBooksApi();
