@@ -8,6 +8,8 @@ async function getCharactersApi() {
     if (response.ok) {
       const characters = await response.json();
       characters.forEach((element: Record<string, null>) => {
+        if (element.index !== null && element.index >= 9) return;
+        console.log(element);
         const span = document.createElement('span');
         const name = document.createElement('p');
         const img = document.createElement('img');
@@ -37,7 +39,6 @@ async function getBooksApi() {
     if (response.ok) {
       const books = await response.json();
       books.forEach((element: Record<string, null>) => {
-        console.log(element);
         const name = document.createElement('p') as HTMLParagraphElement;
         const img = document.createElement('img') as HTMLImageElement;
         const description = document.createElement('p') as HTMLParagraphElement;

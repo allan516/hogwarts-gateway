@@ -18,6 +18,9 @@ function getCharactersApi() {
             if (response.ok) {
                 const characters = yield response.json();
                 characters.forEach((element) => {
+                    if (element.index !== null && element.index >= 9)
+                        return;
+                    console.log(element);
                     const span = document.createElement('span');
                     const name = document.createElement('p');
                     const img = document.createElement('img');
@@ -49,7 +52,6 @@ function getBooksApi() {
             if (response.ok) {
                 const books = yield response.json();
                 books.forEach((element) => {
-                    console.log(element);
                     const name = document.createElement('p');
                     const img = document.createElement('img');
                     const description = document.createElement('p');
