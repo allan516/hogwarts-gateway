@@ -26,15 +26,29 @@ header {
 }
 
 nav {
+  display: flex;
   background-color: #19191b;
 }
 
 nav p {
   text-align: left;
   padding: 10px;
-  font-family: harry;
+  font-family: harry, sans-serif;
   font-size: 4vh;
   color: #f5deb3;
+}
+
+nav a {
+  text-align: left;
+  text-decoration: none;
+  padding: 10px;
+  font-family: 'poppins', sans-serif;
+  font-size: 2vh;
+  color: #f5deb3;
+}
+
+nav a:hover {
+  color: #ecc782;
 }
 
 /* conteúdo principal */
@@ -206,11 +220,13 @@ img.img-hover:hover {
 @media screen and (max-width: 900px) {
   #slide1:checked ~ #controls label:nth-child(2),
   #slide2:checked ~ #controls label:nth-child(3),
-  #slide3:checked ~ #controls label:nth-child(1),
-  #slide1:checked ~ #controls label:nth-last-child(2),
-  #slide2:checked ~ #controls label:nth-last-child(3),
-  #slide3:checked ~ #controls label:nth-last-child(1) {
-    margin: 0;
+  #slide3:checked ~ #controls label:nth-child(1) {
+    margin: -900px 10px 0 0;
+  }
+  #slide1:checked ~ #controls label:nth-child(3),
+  #slide2:checked ~ #controls label:nth-child(1),
+  #slide3:checked ~ #controls label:nth-child(2) {
+    margin: -900px 0 0 10px;
   }
   #slides {
     max-width: calc(100% - 140px);
