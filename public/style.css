@@ -216,6 +216,18 @@ img.img-hover:hover {
     max-width: calc(100% - 140px);
     margin: 0 auto;
   }
+
+  .show-items {
+    max-width: 400px;
+  }
+
+  .show-item2 {
+    max-width: 400px;
+  }
+
+  .show-item3 {
+    max-width: 400px;
+  }
 }
 
 /* section books */
