@@ -34,7 +34,7 @@ nav p {
   padding: 10px;
   font-family: harry;
   font-size: 4vh;
-  color: white;
+  color: wheat;
 }
 
 /* conteúdo principal */
@@ -64,8 +64,9 @@ nav p {
 }
 
 .characters {
-  margin: auto;
-  background-color: black;
+  max-width: 1700px;
+  background-color: #19191b;
+  color: wheat;
   border-radius: 0 200px 200px 0;
   padding: 50px 0;
 }
@@ -74,31 +75,13 @@ nav p {
   display: grid;
   max-width: 700px;
   margin: auto;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   justify-content: center;
 }
 
-span {
-  display: block;
-  height: 270px;
-  color: white;
-  background-color: #3a4a77;
-  border: 1px solid #daa520;
-  text-align: center;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
-}
-
-span:hover {
-  background-color: #5f72a8;
+img.img-hover:hover {
   transform: translate(-5px, -5px);
-  box-shadow: 1px 1px 5px #616161;
-}
-
-span p {
-  font-size: 2vh;
-  font-family: 'Poppins', sans-serif;
+  box-shadow: 1px 1px 5px #d1d1d1;
 }
 
 /* section books */
@@ -133,7 +116,7 @@ footer {
 
 footer p {
   font-family: harry;
-  color: white;
+  color: wheat;
   font-size: 2rem;
   text-align: center;
   padding: 20px 0;

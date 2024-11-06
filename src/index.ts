@@ -8,18 +8,20 @@ async function getCharactersApi() {
     if (response.ok) {
       const characters = await response.json();
       characters.forEach((element: Record<string, null>) => {
-        if (element.index !== null && element.index >= 9) return;
+        if (element.index !== null && element.index >= 12) return;
         console.log(element);
         const span = document.createElement('span');
         const name = document.createElement('p');
         const img = document.createElement('img');
         if (element.fullName !== null && element.image !== null) {
           name.innerHTML = element.fullName;
+          name.style.paddingBottom = '10px';
           img.src = element.image;
-          img.style.clipPath = 'circle()';
-          img.style.paddingTop = '40px';
-          img.style.width = '100px';
-          span.classList.add('.spanShowlist');
+          img.style.borderRadius = '5px';
+          img.style.border = '1px solid white';
+          img.style.width = '150px';
+          img.classList.add('img-hover');
+          span.style.padding = '10px';
           span.appendChild(img);
           span.appendChild(name);
         }
