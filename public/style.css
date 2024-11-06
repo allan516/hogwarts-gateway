@@ -83,6 +83,22 @@ nav p {
   justify-content: center;
 }
 
+.show-item2 {
+  display: grid;
+  max-width: 700px;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  justify-content: center;
+}
+
+.show-item3 {
+  display: grid;
+  max-width: 700px;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  justify-content: center;
+}
+
 img.img-hover:hover {
   transform: translate(-5px, -5px);
   box-shadow: 1px 1px 5px #d1d1d1;
@@ -109,6 +125,7 @@ img.img-hover:hover {
 }
 #overflow {
   width: 100%;
+  padding: 10px;
   overflow: hidden;
 }
 #slide1:checked ~ #slides .inner {

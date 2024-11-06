@@ -9,6 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const showItems = document.querySelector('.show-items');
+const showItem2 = document.querySelector('.show-item2');
+const showItem3 = document.querySelector('.show-item3');
 const getBook = document.querySelector('.books');
 function getCharactersApi() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -18,25 +20,61 @@ function getCharactersApi() {
             if (response.ok) {
                 const characters = yield response.json();
                 characters.forEach((element) => {
-                    if (element.index !== null && element.index >= 12)
-                        return;
                     console.log(element);
-                    const span = document.createElement('span');
-                    const name = document.createElement('p');
-                    const img = document.createElement('img');
-                    if (element.fullName !== null && element.image !== null) {
-                        name.innerHTML = element.fullName;
-                        name.style.padding = '15px';
-                        img.src = element.image;
-                        img.style.borderRadius = '5px';
-                        img.style.border = '1px solid white';
-                        img.style.width = '150px';
-                        img.classList.add('img-hover');
-                        span.style.padding = '0 10px';
-                        span.appendChild(img);
-                        span.appendChild(name);
+                    if (element.index !== null && element.index <= 11) {
+                        const span = document.createElement('span');
+                        const name = document.createElement('p');
+                        const img = document.createElement('img');
+                        if (element.fullName !== null && element.image !== null) {
+                            name.innerHTML = element.fullName;
+                            name.style.padding = '15px';
+                            img.src = element.image;
+                            img.style.borderRadius = '5px';
+                            img.style.border = '1px solid white';
+                            img.style.width = '150px';
+                            img.classList.add('img-hover');
+                            span.style.padding = '10px';
+                            span.appendChild(img);
+                            span.appendChild(name);
+                        }
+                        showItems.appendChild(span);
                     }
-                    showItems.appendChild(span);
+                    else if (element.index !== null && element.index <= 23) {
+                        const span = document.createElement('span');
+                        const name = document.createElement('p');
+                        const img = document.createElement('img');
+                        if (element.fullName !== null && element.image !== null) {
+                            name.innerHTML = element.fullName;
+                            name.style.padding = '15px';
+                            img.src = element.image;
+                            img.style.borderRadius = '5px';
+                            img.style.border = '1px solid white';
+                            img.style.width = '150px';
+                            img.classList.add('img-hover');
+                            span.style.padding = '10px';
+                            span.appendChild(img);
+                            span.appendChild(name);
+                        }
+                        showItem2.appendChild(span);
+                    }
+                    else if (element.index !== null && element.index > 23) {
+                        const span = document.createElement('span');
+                        const name = document.createElement('p');
+                        const img = document.createElement('img');
+                        if (element.fullName !== null && element.image !== null) {
+                            name.innerHTML = element.fullName;
+                            name.style.padding = '15px';
+                            img.src = element.image;
+                            img.style.borderRadius = '5px';
+                            img.style.border = '1px solid white';
+                            img.style.width = '150px';
+                            img.classList.add('img-hover');
+                            span.style.padding = '10px';
+                            span.appendChild(img);
+                            span.appendChild(name);
+                        }
+                        showItem3.appendChild(span);
+                    }
                 });
             }
         }

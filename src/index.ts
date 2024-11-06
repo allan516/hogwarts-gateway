@@ -1,4 +1,6 @@
 const showItems = document.querySelector('.show-items') as HTMLElement;
+const showItem2 = document.querySelector('.show-item2') as HTMLElement;
+const showItem3 = document.querySelector('.show-item3') as HTMLElement;
 const getBook = document.querySelector('.books') as HTMLElement;
 
 async function getCharactersApi() {
@@ -8,24 +10,60 @@ async function getCharactersApi() {
     if (response.ok) {
       const characters = await response.json();
       characters.forEach((element: Record<string, null>) => {
-        if (element.index !== null && element.index >= 12) return;
         console.log(element);
-        const span = document.createElement('span');
-        const name = document.createElement('p');
-        const img = document.createElement('img');
-        if (element.fullName !== null && element.image !== null) {
-          name.innerHTML = element.fullName;
-          name.style.padding = '15px';
-          img.src = element.image;
-          img.style.borderRadius = '5px';
-          img.style.border = '1px solid white';
-          img.style.width = '150px';
-          img.classList.add('img-hover');
-          span.style.padding = '0 10px';
-          span.appendChild(img);
-          span.appendChild(name);
+
+        if (element.index !== null && element.index <= 11) {
+          const span = document.createElement('span');
+          const name = document.createElement('p');
+          const img = document.createElement('img');
+          if (element.fullName !== null && element.image !== null) {
+            name.innerHTML = element.fullName;
+            name.style.padding = '15px';
+            img.src = element.image;
+            img.style.borderRadius = '5px';
+            img.style.border = '1px solid white';
+            img.style.width = '150px';
+            img.classList.add('img-hover');
+            span.style.padding = '10px';
+            span.appendChild(img);
+            span.appendChild(name);
+          }
+          showItems.appendChild(span);
+        } else if (element.index !== null && element.index <= 23) {
+          const span = document.createElement('span');
+          const name = document.createElement('p');
+          const img = document.createElement('img');
+          if (element.fullName !== null && element.image !== null) {
+            name.innerHTML = element.fullName;
+            name.style.padding = '15px';
+            img.src = element.image;
+            img.style.borderRadius = '5px';
+            img.style.border = '1px solid white';
+            img.style.width = '150px';
+            img.classList.add('img-hover');
+            span.style.padding = '10px';
+            span.appendChild(img);
+            span.appendChild(name);
+          }
+          showItem2.appendChild(span);
+        } else if (element.index !== null && element.index > 23) {
+          const span = document.createElement('span');
+          const name = document.createElement('p');
+          const img = document.createElement('img');
+          if (element.fullName !== null && element.image !== null) {
+            name.innerHTML = element.fullName;
+            name.style.padding = '15px';
+            img.src = element.image;
+            img.style.borderRadius = '5px';
+            img.style.border = '1px solid white';
+            img.style.width = '150px';
+            img.classList.add('img-hover');
+            span.style.padding = '10px';
+            span.appendChild(img);
+            span.appendChild(name);
+          }
+          showItem3.appendChild(span);
         }
-        showItems.appendChild(span);
       });
     }
   } catch (error) {
