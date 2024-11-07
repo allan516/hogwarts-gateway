@@ -11,8 +11,8 @@ async function getCharactersApi() {
       const characters = await response.json();
       characters.forEach((element: Record<string, null>) => {
         console.log(element);
-
-        if (element.index !== null && element.index <= 11) {
+        console.log(element);
+        if (element.index !== null && element.index <= 0) {
           const span = document.createElement('span');
           const name = document.createElement('p');
           const img = document.createElement('img');
@@ -29,41 +29,41 @@ async function getCharactersApi() {
             span.appendChild(name);
           }
           showItems.appendChild(span);
-        } else if (element.index !== null && element.index <= 23) {
-          const span = document.createElement('span');
-          const name = document.createElement('p');
-          const img = document.createElement('img');
-          if (element.fullName !== null && element.image !== null) {
-            name.innerHTML = element.fullName;
-            name.style.padding = '15px';
-            img.src = element.image;
-            img.style.borderRadius = '5px';
-            img.style.border = '1px solid white';
-            img.style.width = '150px';
-            img.classList.add('img-hover');
-            span.style.padding = '10px';
-            span.appendChild(img);
-            span.appendChild(name);
-          }
-          showItem2.appendChild(span);
-        } else if (element.index !== null && element.index > 23) {
-          const span = document.createElement('span');
-          const name = document.createElement('p');
-          const img = document.createElement('img');
-          if (element.fullName !== null && element.image !== null) {
-            name.innerHTML = element.fullName;
-            name.style.padding = '15px';
-            img.src = element.image;
-            img.style.borderRadius = '5px';
-            img.style.border = '1px solid white';
-            img.style.width = '150px';
-            img.classList.add('img-hover');
-            span.style.padding = '10px';
-            span.appendChild(img);
-            span.appendChild(name);
-          }
-          showItem3.appendChild(span);
-        }
+        // } else if (element.index !== null && element.index <= 23) {
+        //   const span = document.createElement('span');
+        //   const name = document.createElement('p');
+        //   const img = document.createElement('img');
+        //   if (element.fullName !== null && element.image !== null) {
+        //     name.innerHTML = element.fullName;
+        //     name.style.padding = '15px';
+        //     img.src = element.image;
+        //     img.style.borderRadius = '5px';
+        //     img.style.border = '1px solid white';
+        //     img.style.width = '150px';
+        //     img.classList.add('img-hover');
+        //     span.style.padding = '10px';
+        //     span.appendChild(img);
+        //     span.appendChild(name);
+        //   }
+        //   showItem2.appendChild(span);
+        // } else if (element.index !== null && element.index > 23) {
+        //   const span = document.createElement('span');
+        //   const name = document.createElement('p');
+        //   const img = document.createElement('img');
+        //   if (element.fullName !== null && element.image !== null) {
+        //     name.innerHTML = element.fullName;
+        //     name.style.padding = '15px';
+        //     img.src = element.image;
+        //     img.style.borderRadius = '5px';
+        //     img.style.border = '1px solid white';
+        //     img.style.width = '150px';
+        //     img.classList.add('img-hover');
+        //     span.style.padding = '10px';
+        //     span.appendChild(img);
+        //     span.appendChild(name);
+        //   }
+        //   showItem3.appendChild(span);
+        // }
       });
     }
   } catch (error) {
