@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="style.css" />
     <title>Hogwarts Gateway</title>
   </head>
-  <body>
+  <body id="home">
     <header>
       <img class="img-header" src="../images/Sem título.png" />
     </header>
     <nav>
-      <p>Hogwarts Gateway</p>
+      <p><a href="#home" class="home">Hogwarts Gateway</a></p>
       <p>
         <a href="#person">Personagens</a>
         <span></span>
@@ -46,10 +46,12 @@
           de maneira única para o desenvolvimento da narrativa.
         </p>
 
-        <h2>Veja alguns dos personagens que encantam e intrigam os fãs:</h2>
+        <h2 id="person">
+          Veja alguns dos personagens que encantam e intrigam os fãs:
+        </h2>
       </article>
 
-      <article class="characters" id="person">
+      <article class="characters">
         <div id="slider">
           <input type="radio" name="slider" id="slide1" checked />
           <input type="radio" name="slider" id="slide2" />

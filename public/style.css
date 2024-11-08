@@ -27,14 +27,17 @@ header {
 
 nav {
   display: flex;
+  position: sticky;
+  top: -1%;
+  z-index: 3;
+  padding: 15px;
   background-color: #19191b;
 }
 
-nav p {
+nav p > .home {
   text-align: left;
-  padding: 10px;
   font-family: harry, sans-serif;
-  font-size: 4vh;
+  font-size: 2rem;
   color: #f5deb3;
 }
 
@@ -72,7 +75,7 @@ nav a:hover ~ span:nth-child(2) {
   flex-direction: column;
   justify-content: space-around;
   max-width: 1000px;
-  height: 1300px;
+  height: 1200px;
   padding: 10px;
   margin: auto;
 }
@@ -84,10 +87,11 @@ nav a:hover ~ span:nth-child(2) {
 }
 
 .introduction h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .introduction h2 {
+  padding-top: 60px;
   font-size: 2rem;
 }
 
@@ -189,7 +193,7 @@ img.img-hover:hover {
   margin: -180px 0 0 0;
   width: 100%;
   height: 50px;
-  z-index: 3;
+  z-index: 2;
   position: relative;
 }
 #controls label {
@@ -285,7 +289,7 @@ section article h1 {
 
 .books {
   max-width: 900px;
-  padding: 10px;
+  padding: 60px 10px;
   margin: auto;
 }
 
