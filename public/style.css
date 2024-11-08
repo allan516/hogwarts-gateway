@@ -47,8 +47,22 @@ nav a {
   color: #f5deb3;
 }
 
+nav p span {
+  display: flex;
+  margin-left: 10px;
+  width: 0px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #dfd6c7;
+  transition-duration: 0.4s;
+}
+
 nav a:hover {
-  color: #ecc782;
+  color: #dfd6c7;
+}
+
+nav a:hover ~ span:nth-child(2) {
+  width: 30px;
 }
 
 /* conteúdo principal */
@@ -91,27 +105,28 @@ nav a:hover {
 }
 
 .show-items {
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
   color: #f5deb3;
   max-width: 700px;
   margin: 100px auto;
-  /* grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   justify-content: center;
 }
 
 .show-item2 {
   display: grid;
+  color: #f5deb3;
   max-width: 700px;
-  margin: auto;
+  margin: 100px auto;
   grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   justify-content: center;
 }
 
 .show-item3 {
   display: grid;
+  color: #f5deb3;
   max-width: 700px;
-  margin: auto;
+  margin: 100px auto;
   grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   justify-content: center;
 }
@@ -142,7 +157,7 @@ img.img-hover:hover {
 }
 #overflow {
   width: 100%;
-  padding: 10px;
+  padding: 10px 0;
   overflow: hidden;
 }
 #slide1:checked ~ #slides .inner {
@@ -192,7 +207,7 @@ img.img-hover:hover {
 #slide3:checked ~ #controls label:nth-child(1) {
   background: url('../images/icons8-next-page-50.png') no-repeat;
   float: right;
-  margin: -200px -50px 0 0;
+  margin: -550px -50px 0 0;
   display: block;
 }
 #slide1:checked ~ #controls label:nth-child(3),
@@ -200,7 +215,7 @@ img.img-hover:hover {
 #slide3:checked ~ #controls label:nth-child(2) {
   background: url('../images/icons8-back-to-50.png') no-repeat;
   float: left;
-  margin: -200px 0 0 -50px;
+  margin: -550px 0 0 -50px;
   display: block;
 }
 #bullets {
@@ -254,8 +269,7 @@ img.img-hover:hover {
 section {
   margin: 200px 0 0 0;
   padding-top: 50px;
-  background: url('../images/fundo.jpg') no-repeat;
-  background-size: cover;
+  background-color: #fae5c3;
 }
 
 .books {
