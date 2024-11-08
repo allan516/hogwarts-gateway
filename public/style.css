@@ -157,7 +157,7 @@ img.img-hover:hover {
 }
 #overflow {
   width: 100%;
-  padding: 10px 0;
+
   overflow: hidden;
 }
 #slide1:checked ~ #slides .inner {
@@ -262,6 +262,12 @@ img.img-hover:hover {
   .show-item3 {
     max-width: 400px;
   }
+
+  .books div {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
 }
 
 /* section books */
@@ -270,6 +276,11 @@ section {
   margin: 200px 0 0 0;
   padding-top: 50px;
   background-color: #fae5c3;
+}
+
+section article h1 {
+  font-family: harry, sans-serif;
+  font-size: 3rem;
 }
 
 .books {
