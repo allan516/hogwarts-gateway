@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+const domElement_1 = require("./domElement");
 const showItems = document.querySelector('.show-items');
 const showItem2 = document.querySelector('.show-item2');
 const showItem3 = document.querySelector('.show-item3');
@@ -22,58 +24,18 @@ function getCharactersApi() {
                 characters.forEach((element) => {
                     console.log(element);
                     if (element.index !== null && element.index <= 7) {
-                        const span = document.createElement('span');
-                        const name = document.createElement('p');
-                        const img = document.createElement('img');
-                        if (element.fullName !== null && element.image !== null) {
-                            name.innerHTML = element.fullName;
-                            name.style.padding = '15px';
-                            img.src = element.image;
-                            img.style.borderRadius = '5px';
-                            img.style.border = '1px solid white';
-                            img.style.width = '150px';
-                            img.classList.add('img-hover');
-                            span.style.padding = '10px';
-                            span.appendChild(img);
-                            span.appendChild(name);
-                        }
+                        const span = domElement_1.dom.create(element);
                         showItems.appendChild(span);
                     }
                     else if (element.index !== null && element.index <= 15) {
-                        const span = document.createElement('span');
-                        const name = document.createElement('p');
-                        const img = document.createElement('img');
-                        if (element.fullName !== null && element.image !== null) {
-                            name.innerHTML = element.fullName;
-                            name.style.padding = '15px';
-                            img.src = element.image;
-                            img.style.borderRadius = '5px';
-                            img.style.border = '1px solid white';
-                            img.style.width = '150px';
-                            img.classList.add('img-hover');
-                            span.style.padding = '10px';
-                            span.appendChild(img);
-                            span.appendChild(name);
-                        }
+                        const span = domElement_1.dom.create(element);
                         showItem2.appendChild(span);
                     }
                     else if (element.index !== null && element.index > 15) {
-                        const span = document.createElement('span');
-                        const name = document.createElement('p');
-                        const img = document.createElement('img');
                         if (element.fullName !== null && element.image !== null) {
-                            name.innerHTML = element.fullName;
-                            name.style.padding = '15px';
-                            img.src = element.image;
-                            img.style.borderRadius = '5px';
-                            img.style.border = '1px solid white';
-                            img.style.width = '150px';
-                            img.classList.add('img-hover');
-                            span.style.padding = '10px';
-                            span.appendChild(img);
-                            span.appendChild(name);
+                            const span = domElement_1.dom.create(element);
+                            showItem3.appendChild(span);
                         }
-                        showItem3.appendChild(span);
                     }
                 });
             }
