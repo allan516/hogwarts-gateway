@@ -8,12 +8,31 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const domElement_1 = require("./domElement");
 const showItems = document.querySelector('.show-items');
 const showItem2 = document.querySelector('.show-item2');
 const showItem3 = document.querySelector('.show-item3');
 const getBook = document.querySelector('.books');
+class DomElement {
+    create(element) {
+        const span = document.createElement('span');
+        const name = document.createElement('p');
+        const img = document.createElement('img');
+        if (element.fullName !== null && element.image !== null) {
+            name.innerHTML = element.fullName;
+            name.style.padding = '15px';
+            img.src = element.image;
+            img.style.borderRadius = '5px';
+            img.style.border = '1px solid white';
+            img.style.width = '150px';
+            img.classList.add('img-hover');
+            span.style.padding = '10px';
+            span.appendChild(img);
+            span.appendChild(name);
+            return span;
+        }
+    }
+}
+const dom = new DomElement();
 function getCharactersApi() {
     return __awaiter(this, void 0, void 0, function* () {
         const url = 'https://potterapi-fedeperin.vercel.app/pt/characters';
@@ -24,16 +43,16 @@ function getCharactersApi() {
                 characters.forEach((element) => {
                     console.log(element);
                     if (element.index !== null && element.index <= 7) {
-                        const span = domElement_1.dom.create(element);
+                        const span = dom.create(element);
                         showItems.appendChild(span);
                     }
                     else if (element.index !== null && element.index <= 15) {
-                        const span = domElement_1.dom.create(element);
+                        const span = dom.create(element);
                         showItem2.appendChild(span);
                     }
                     else if (element.index !== null && element.index > 15) {
                         if (element.fullName !== null && element.image !== null) {
-                            const span = domElement_1.dom.create(element);
+                            const span = dom.create(element);
                             showItem3.appendChild(span);
                         }
                     }
@@ -42,7 +61,7 @@ function getCharactersApi() {
         }
         catch (error) {
             console.error(error);
-            throw new Error(`Response status: ${response.status}`);
+            throw new Error(`Response status: ${response.status} deu erro`);
         }
     });
 }
@@ -80,7 +99,7 @@ function getBooksApi() {
         }
         catch (error) {
             console.error(error);
-            throw new Error(`Response status: ${response.status}`);
+            throw new Error(`Response status: ${response.status} deu erro`);
         }
     });
 }

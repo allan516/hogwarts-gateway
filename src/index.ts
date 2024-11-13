@@ -1,9 +1,34 @@
-import { dom } from './domElement';
-
 const showItems = document.querySelector('.show-items') as HTMLElement;
 const showItem2 = document.querySelector('.show-item2') as HTMLElement;
 const showItem3 = document.querySelector('.show-item3') as HTMLElement;
 const getBook = document.querySelector('.books') as HTMLElement;
+
+class DomElement {
+  create(element: Record<string, null>) {
+    const span = document.createElement('span');
+    const name = document.createElement('p');
+    const img = document.createElement('img');
+
+    if (element.fullName !== null && element.image !== null) {
+      name.innerHTML = element.fullName;
+      name.style.padding = '15px';
+
+      img.src = element.image;
+      img.style.borderRadius = '5px';
+      img.style.border = '1px solid white';
+      img.style.width = '150px';
+      img.classList.add('img-hover');
+
+      span.style.padding = '10px';
+      span.appendChild(img);
+      span.appendChild(name);
+
+      return span;
+    }
+  }
+}
+
+const dom = new DomElement();
 
 async function getCharactersApi() {
   const url: string = 'https://potterapi-fedeperin.vercel.app/pt/characters';
@@ -29,7 +54,7 @@ async function getCharactersApi() {
     }
   } catch (error) {
     console.error(error);
-    throw new Error(`Response status: ${response.status}`);
+    throw new Error(`Response status: ${response.status} deu erro`);
   }
 }
 
@@ -67,7 +92,7 @@ async function getBooksApi() {
     }
   } catch (error) {
     console.error(error);
-    throw new Error(`Response status: ${response.status}`);
+    throw new Error(`Response status: ${response.status} deu erro`);
   }
 }
 
