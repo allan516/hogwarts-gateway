@@ -4,7 +4,7 @@ const showItem3 = document.querySelector('.show-item3') as HTMLElement;
 const getBook = document.querySelector('.books') as HTMLElement;
 
 class DomElement {
-  create(element: Record<string, null>) {
+  showCharacters(element: Record<string, null>) {
     const span = document.createElement('span');
     const name = document.createElement('p');
     const img = document.createElement('img');
@@ -26,6 +26,33 @@ class DomElement {
       return span;
     }
   }
+
+  showBooks(element: Record<string, null>) {
+    const name = document.createElement('p') as HTMLParagraphElement;
+    const img = document.createElement('img') as HTMLImageElement;
+    const description = document.createElement('p') as HTMLParagraphElement;
+    const divDescription = document.createElement('div') as HTMLDivElement;
+    const divImg = document.createElement('div') as HTMLDivElement;
+    const div = document.createElement('div') as HTMLDivElement;
+    if (
+      element.title !== null &&
+      element.cover !== null &&
+      element.description !== null
+    ) {
+      name.innerHTML = element.title;
+      description.innerHTML = element.description;
+      img.src = element.cover;
+      img.style.height = '250px';
+      img.style.paddingTop = '60px';
+      divImg.appendChild(img);
+      divDescription.appendChild(name);
+      divDescription.appendChild(description);
+      div.appendChild(divImg);
+      div.appendChild(divDescription);
+    }
+
+    return div;
+  }
 }
 
 const dom = new DomElement();
@@ -39,14 +66,14 @@ async function getCharactersApi() {
       characters.forEach((element: Record<string, null>) => {
         console.log(element);
         if (element.index !== null && element.index <= 7) {
-          const span = dom.create(element) as HTMLElement;
+          const span = dom.showCharacters(element) as HTMLElement;
           showItems.appendChild(span);
         } else if (element.index !== null && element.index <= 15) {
-          const span = dom.create(element) as HTMLElement;
+          const span = dom.showCharacters(element) as HTMLElement;
           showItem2.appendChild(span);
         } else if (element.index !== null && element.index > 15) {
           if (element.fullName !== null && element.image !== null) {
-            const span = dom.create(element) as HTMLElement;
+            const span = dom.showCharacters(element) as HTMLElement;
             showItem3.appendChild(span);
           }
         }
@@ -54,7 +81,7 @@ async function getCharactersApi() {
     }
   } catch (error) {
     console.error(error);
-    throw new Error(`Response status: ${response.status} deu erro`);
+    throw new Error(`Response status: ${response.status}`);
   }
 }
 
@@ -65,34 +92,13 @@ async function getBooksApi() {
     if (response.ok) {
       const books = await response.json();
       books.forEach((element: Record<string, null>) => {
-        const name = document.createElement('p') as HTMLParagraphElement;
-        const img = document.createElement('img') as HTMLImageElement;
-        const description = document.createElement('p') as HTMLParagraphElement;
-        const divDescription = document.createElement('div') as HTMLDivElement;
-        const divImg = document.createElement('div') as HTMLDivElement;
-        const div = document.createElement('div') as HTMLDivElement;
-        if (
-          element.title !== null &&
-          element.cover !== null &&
-          element.description !== null
-        ) {
-          name.innerHTML = element.title;
-          description.innerHTML = element.description;
-          img.src = element.cover;
-          img.style.height = '250px';
-          img.style.paddingTop = '60px';
-          divImg.appendChild(img);
-          divDescription.appendChild(name);
-          divDescription.appendChild(description);
-          div.appendChild(divImg);
-          div.appendChild(divDescription);
-          getBook.appendChild(div);
-        }
+        const div = dom.showBooks(element) as HTMLElement;
+        getBook.appendChild(div);
       });
     }
   } catch (error) {
     console.error(error);
-    throw new Error(`Response status: ${response.status} deu erro`);
+    throw new Error(`Response status: ${response.status}`);
   }
 }
 
