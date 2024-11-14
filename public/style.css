@@ -243,12 +243,12 @@ img.img-hover:hover {
   #slide1:checked ~ #controls label:nth-child(2),
   #slide2:checked ~ #controls label:nth-child(3),
   #slide3:checked ~ #controls label:nth-child(1) {
-    margin: -900px 10px 0 0;
+    margin: -600px 10px 0 0;
   }
   #slide1:checked ~ #controls label:nth-child(3),
   #slide2:checked ~ #controls label:nth-child(1),
   #slide3:checked ~ #controls label:nth-child(2) {
-    margin: -900px 0 0 10px;
+    margin: -600px 0 0 10px;
   }
   #slides {
     max-width: calc(100% - 140px);
@@ -272,8 +272,14 @@ img.img-hover:hover {
     flex-direction: column !important;
     align-items: center !important;
   }
+  
+  img.img-hover {
+    width: 85px  !important;
+  }
+  .characters {
+  max-height: 1150px;
+  }
 }
-
 /* section books */
 
 section {
